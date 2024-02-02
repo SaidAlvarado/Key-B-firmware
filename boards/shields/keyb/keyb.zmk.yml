@@ -1,0 +1,7 @@
+file_format: "1"
+id: keyb
+name: Key-b
+type: shield
+url: https://github.com/SaidAlvarado/leftboard-hardware
+features:
+  - keys
