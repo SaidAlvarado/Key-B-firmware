@@ -4,10 +4,6 @@ config ZMK_BLE
 config ZMK_USB
 	default y
 
-config CONFIG_ZMK_KSCAN_DIRECT_POLLING
-	default y
-    
-
 if SHIELD_KEYB
 
 config ZMK_KEYBOARD_NAME
