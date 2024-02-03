@@ -10,12 +10,12 @@
 
 #include <dt-bindings/zmk/outputs.h>
 
-#define DEFAULT   0 
-#define FLIP      1 
-#define NUM       2
-#define SYMB      3
-#define CONFIG    4
-#define MACRO     5
+// #define DEFAULT   0 
+// #define FLIP      1 
+// #define NUM       2
+// #define SYMB      3
+// #define CONFIG    4
+// #define MACRO     5
 
 
 / {
