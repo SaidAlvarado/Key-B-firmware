@@ -18,6 +18,6 @@
 #
 ---
 include:
-  - board: nrf52840dk_nrf52840
+  - board: nrf52840_m2
     shield: keyb
   

@@ -3,6 +3,6 @@ id: keyb
 name: Key-b
 type: shield
 url: https://github.com/SaidAlvarado/leftboard-hardware
-requires: [nrf52840dk_nrf52840]
+requires: [nrf52840dk_m2]
 features:
   - keys
