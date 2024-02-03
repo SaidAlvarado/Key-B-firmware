@@ -7,6 +7,16 @@ config ZMK_USB
 if SHIELD_KEYB
 
 config ZMK_KEYBOARD_NAME
-    default "Key-B"
+    default "KeyB"
+
+if USB_DEVICE_STACK
+
+config USB_NRFX
+    default y
+
+endif # USB_DEVICE_STACK
+
+config BT_CTLR
+    default BT
 
 endif
