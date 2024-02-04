@@ -1,8 +1,0 @@
-file_format: "1"
-id: keyb
-name: Key-b
-type: shield
-url: https://github.com/SaidAlvarado/leftboard-hardware
-requires: [nice_nano_v2]
-features:
-  - keys

@@ -1,2 +1,0 @@
-config SHIELD_KEYB
-    def_bool $(shields_list_contains,keyb)

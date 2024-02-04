@@ -1,0 +1,6 @@
+if SHIELD_KEYB
+
+config ZMK_KEYBOARD_NAME
+    default "Key-B"
+
+endif
