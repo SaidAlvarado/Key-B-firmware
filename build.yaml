@@ -18,7 +18,5 @@
 #
 ---
 include:
-  - board: nice_nano_v2
+  - board: nrf52840dk_nrf52840
     shield: keyb
-  - board: nice_nano_v2
-    shield: settings_reset

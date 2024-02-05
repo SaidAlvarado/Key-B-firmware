@@ -14,13 +14,7 @@
 
         default_layer {
             bindings = <
-                &kp ESC    &none    &kp BSPC   &kp SPACE    &kp PERIOD    &kp SEMICOLON
-                &kp LALT   &kp Q    &kp W      &kp F        &kp P         &kp B 
-                &kp LSHFT  &kp A    &kp R      &kp S        &kp T         &kp G  
-                &kp LCTRL  &kp Z    &kp X      &kp C        &kp D         &kp V  
-                
-                // &none &none &none &none &none  
-                // &mo CONFIG  &mo SYMB &mo FLIP  &mo MACRO  &mo NUM  
+                &kp A   &kp B   &kp C   &kp D 
             >;
         };
 
