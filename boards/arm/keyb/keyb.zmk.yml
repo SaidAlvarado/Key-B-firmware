@@ -1,0 +1,11 @@
+file_format: "1"
+id: keyb
+name: keyb
+type: board
+arch: arm
+features:
+  - keys
+outputs:
+  - usb
+  - ble
+url: https://github.com/SaidAlvarado/leftboard-hardware
