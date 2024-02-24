@@ -28,6 +28,9 @@ CONFIG_ZMK_BLE=y
 # Try to fix connection issues with android and linux
 CONFIG_ZMK_BLE_EXPERIMENTAL_CONN=y
 
+#allow for longer macros
+# CONFIG_ZMK_BEHAVIORS_QUEUE_SIZE=512
+
 # CONFIG_LOG=y
 # CONFIG_ZMK_USB_LOGGING=y
 # CONFIG_USB_CDC_ACM_RINGBUF_SIZE=32768

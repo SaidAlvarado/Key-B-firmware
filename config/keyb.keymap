@@ -17,6 +17,27 @@
 
 / {
 
+    macros {
+        hotmail: hotmail_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp S &kp A &kp I &kp D &kp UNDERSCORE &kp A &kp L &kp V &kp A &kp R &kp A &kp D &kp O &kp AT &kp H &kp O &kp T &kp M &kp A &kp I &kp L &kp PERIOD &kp C &kp O &kp M>;
+        };
+        gmail: gmail_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp A &kp L &kp V &kp A &kp R &kp A &kp D &kp O &kp S &kp A &kp I &kp D &kp N9 &kp N4 &kp AT &kp G &kp M &kp A &kp I &kp L &kp PERIOD &kp C &kp O &kp M>;
+        };
+        inria: inria_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp S &kp A &kp I &kp D &kp MINUS &kp A &kp L &kp E &kp X &kp A &kp N &kp D &kp E &kp R &kp PERIOD &kp A &kp L &kp V &kp A &kp R &kp A &kp D &kp O &kp MINUS &kp M &kp A &kp R &kp I &kp N &kp AT &kp I &kp N &kp R &kp I &kp A &kp PERIOD &kp F &kp R>;
+        };
+    };
+
     behaviors {
         shft_CP: tap_dance_0 {
             compatible = "zmk,behavior-tap-dance";
@@ -24,14 +45,24 @@
             tapping-term-ms = <200>;
             bindings = <&kp LSHFT>, <&kp CAPSLOCK>;
         };
+
+        email: tap_dance_1 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&hotmail>, <&gmail>, <&inria>;
+        };
     };
+
+
+
 
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
             bindings = <
-                &kp ESC    &none    &kp BSPC   &kp SPACE    &kp LEFT_WIN  &kp EXCLAMATION
+                &kp ESC    &kp SPACE    &kp BSPC   &none    &kp LEFT_WIN  &kp EXCLAMATION
                 &kp LALT   &kp Q    &kp W      &kp F        &kp P         &kp B 
                 &shft_CP   &kp A    &kp R      &kp S        &kp T         &kp G  
                 &kp LCTRL  &kp Z    &kp X      &kp C        &kp D         &kp V  
@@ -42,10 +73,10 @@
 
         flip_layer {
             bindings = <
-                &kp ESC    &kp CARET       &kp DEL         &kp TAB         &kp PERCENT  &kp DOLLAR
+                &kp ESC    &kp TAB      &kp DEL         &kp CARET         &kp PERCENT  &kp DOLLAR
                 &kp LALT   &kp AMPERSAND   &kp Y           &kp U           &kp L        &kp J 
                 &shft_CP   &kp O           &kp I           &kp E           &kp N        &kp M  
-                &kp LCTRL  &kp COMMA       &kp SEMICOLON   &kp QUESTION    &kp H        &kp K  
+                &kp LCTRL  &kp COMMA       &kp COLON   &kp QUESTION    &kp H        &kp K  
                 
                 &mo CONFIG  &mo SYMB &mo FLIP  &mo MACRO  &mo NUM                         
             >;
@@ -54,10 +85,10 @@
 
         num_layer {
             bindings = <
-                &none      &kp GRAVE     &kp PLUS         &kp ENTER       &kp EQUAL     &kp ASTERISK
-                &kp LALT   &kp LEFT      &kp UP           &kp N7        &kp N8        &kp N9 
-                &shft_CP   &kp RIGHT     &kp DOWN         &kp N4        &kp N5        &kp N6  
-                &kp LCTRL  &kp F12       &kp N0           &kp N1        &kp N2        &kp N3  
+                &none      &kp ENTER     &kp PLUS         &kp GRAVE       &kp EQUAL     &kp ASTERISK
+                &kp LALT   &kp LEFT_PARENTHESIS      &kp N7           &kp N8        &kp N9        &kp LEFT_BRACKET 
+                &shft_CP   &kp N0     &kp N4         &kp N5        &kp N6        &kp PERIOD  
+                &kp LCTRL  &kp F12       &kp N1           &kp N2        &kp N3        &kp LEFT_BRACE
                 
                 &mo CONFIG  &mo SYMB &mo FLIP  &mo MACRO  &mo NUM                         
             >;
@@ -66,10 +97,10 @@
 
         symb_layer {
             bindings = <
-                &kp TILDE    &none         &kp AT            &kp HASH       &kp LESS_THAN        &kp GREATER_THAN
-                &kp LALT     &kp PIPE      &kp SINGLE_QUOTE  &kp SLASH      &kp LEFT_BRACKET     &kp RIGHT_BRACKET 
-                &shft_CP     &kp BACKSLASH &kp DOUBLE_QUOTES &kp UNDERSCORE &kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS  
-                &kp LCTRL    &kp PERIOD    &kp COLON        &kp MINUS      &kp LEFT_BRACE       &kp RIGHT_BRACE  
+                &kp TILDE    &kp HASH      &kp AT            &none          &kp LESS_THAN        &kp GREATER_THAN
+                &kp LALT     &kp LEFT_PARENTHESIS      &kp UNDERSCORE  &kp UP      &kp SLASH     &kp RIGHT_BRACKET 
+                &shft_CP     &kp BACKSLASH &kp LEFT &kp DOWN &kp RIGHT &kp DOUBLE_QUOTES  
+                &kp LCTRL    &kp PIPE    &kp SEMICOLON        &kp MINUS      &kp SINGLE_QUOTE       &kp RIGHT_BRACE  
                 
                 &mo CONFIG  &mo SYMB &mo FLIP  &mo MACRO  &mo NUM                         
             >;
@@ -90,7 +121,7 @@
 
         macro_layer {
             bindings = <
-                &none    &none     &none     &none      &none    &none
+                &none    &email    &none     &none      &none    &none
                 &none    &none     &none     &none      &none    &none 
                 &none    &none     &none     &none      &none    &none  
                 &none    &none     &none     &none      &none    &none
