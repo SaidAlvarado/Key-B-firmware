@@ -10,9 +10,10 @@ And this repository works with the [ZMK github-action template](https://github.c
 ### Folder Structure
 The `highlighted files` are the modified ones, the rest are the same as the template.
 
+```
 .github/
 └── workflows/
-    └── build.yml
+    └── build.yml  
 boards/
 ├── shields
 └── arm/
@@ -32,6 +33,7 @@ config/
 zephyr/
 └── module.yml
 `build.yaml`
+```
 
 - `keyb/`: Kconfig and DTS files defining the custom board, modified from the [nice!nano board definition](https://github.com/zmkfirmware/zmk/tree/main/app/boards/arm/nice_nano)
 - `keyb.keymap`: Keymap file for the keyboard.
