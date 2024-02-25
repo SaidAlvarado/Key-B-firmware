@@ -98,7 +98,7 @@
         symb_layer {
             bindings = <
                 &kp TILDE    &kp HASH              &kp AT           &none       &kp LESS_THAN      &kp GREATER_THAN
-                &kp LALT     &kp LEFT_PARENTHESIS  &kp UNDERSCORE   &kp UP      &kp SLASH          &kp RIGHT_BRACKET 
+                &kp LALT     &kp RIGHT_PARENTHESIS  &kp UNDERSCORE   &kp UP      &kp SLASH          &kp RIGHT_BRACKET 
                 &shft_CP     &kp BACKSLASH         &kp LEFT         &kp DOWN    &kp RIGHT          &kp DOUBLE_QUOTES  
                 &kp LCTRL    &kp PIPE              &kp SEMICOLON    &kp MINUS   &kp SINGLE_QUOTE   &kp RIGHT_BRACE  
                 
