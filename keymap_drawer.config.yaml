@@ -3,9 +3,16 @@
 draw_config:
   # Draw the layers in a grid with 2 columns instead of a single column
   n_columns: 2
+  # Always dark ("auto" would follow the viewer's theme, but the PNG export can't do that)
+  dark_mode: true
+  # Dark background so the drawing isn't white when opened on its own.
+  # Keep in sync with the PNG background in .github/workflows/draw.yml
+  svg_extra_style: |
+    svg.keymap { background-color: #22272e; }
 parse_config:
   # Legends for the custom behaviors defined in config/keyb.keymap
   raw_binding_map:
     "&alt_der": { t: Alt, h: "×2 AltGr" }
     "&shft_CP": { t: Shift, h: "×2 Caps" }
     "&email": { t: Email, h: "×1/×2/×3" }
+    "&studio_unlock": { t: Studio, h: unlock }

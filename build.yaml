@@ -26,3 +26,9 @@ include:
   - board: keyb//zmk
     snippet: zmk-usb-logging
     artifact-name: keyb-zmk-usb-logging
+  # ZMK Studio build: lets https://zmk.studio change the keymap live over USB or BLE.
+  # Unlock with &studio_unlock (CONFIG + Ctrl) before making changes.
+  - board: keyb//zmk
+    snippet: studio-rpc-usb-uart
+    cmake-args: -DCONFIG_ZMK_STUDIO=y
+    artifact-name: keyb-zmk-studio

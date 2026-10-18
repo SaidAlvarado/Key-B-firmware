@@ -1,5 +1,5 @@
-# Redraws keymap-drawer/keyb.svg whenever the keymap or the physical layout changes,
-# and commits the result back to the branch.
+# Redraws keymap-drawer/keyb.svg (and a PNG copy) whenever the keymap or the physical layout
+# changes, and commits the result back to the branch.
 name: Draw keymap
 
 on:
@@ -13,13 +13,28 @@ on:
 
 jobs:
   draw:
-    uses: caksoylar/keymap-drawer/.github/workflows/draw-zmk.yml@v0.23.0
+    runs-on: ubuntu-latest
     permissions:
       contents: write # allow workflow to commit to the repo
-    with:
-      install_version: "0.23.0"
-      keymap_patterns: "config/*.keymap"
-      config_path: "keymap_drawer.config.yaml"
-      output_folder: "keymap-drawer"
-      # Physical layout is found automatically at boards/saidalvarado/keyb/keyb-layout.dtsi
-      fail_on_error: true
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Install keymap-drawer and rsvg-convert
+        run: |
+          pipx install keymap-drawer==0.23.0
+          sudo apt-get update && sudo apt-get install -y librsvg2-bin
+
+      - name: Draw keymap
+        run: |
+          mkdir -p keymap-drawer
+          keymap -c keymap_drawer.config.yaml parse -z config/keyb.keymap > keymap-drawer/keyb.yaml
+          keymap -c keymap_drawer.config.yaml draw keymap-drawer/keyb.yaml \
+            -d boards/saidalvarado/keyb/keyb-layout.dtsi -o keymap-drawer/keyb.svg
+          # Background matches svg_extra_style in keymap_drawer.config.yaml
+          rsvg-convert -b '#22272e' -z 1.5 keymap-drawer/keyb.svg -o keymap-drawer/keyb.png
+
+      - name: Commit drawings
+        uses: stefanzweifel/git-auto-commit-action@v7
+        with:
+          commit_message: "keymap-drawer render"
+          file_pattern: "keymap-drawer/keyb.yaml keymap-drawer/keyb.svg keymap-drawer/keyb.png"

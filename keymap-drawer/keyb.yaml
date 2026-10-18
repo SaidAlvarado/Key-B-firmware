@@ -139,7 +139,7 @@ layers:
   - ''
   - {t: BT DISC, h: '2'}
   - {t: BT, h: '2'}
-  - ''
+  - {t: Studio, h: unlock}
   - ''
   - ''
   - {t: BT, h: '4'}

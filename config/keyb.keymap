@@ -116,10 +116,10 @@
 
         config_layer {
             bindings = <
-                &none    &none     &bt BT_CLR    &none          &bt BT_DISC 0    &bt BT_SEL 0
-                &none    &none     &none         &none          &bt BT_DISC 1    &bt BT_SEL 1 
-                &none    &none     &none         &none          &bt BT_DISC 2    &bt BT_SEL 2  
-                &none    &none     &none         &bt BT_SEL 4   &bt BT_DISC 3    &bt BT_SEL 3
+                &none             &none     &bt BT_CLR    &none          &bt BT_DISC 0    &bt BT_SEL 0
+                &none             &none     &none         &none          &bt BT_DISC 1    &bt BT_SEL 1
+                &none             &none     &none         &none          &bt BT_DISC 2    &bt BT_SEL 2
+                &studio_unlock    &none     &none         &bt BT_SEL 4   &bt BT_DISC 3    &bt BT_SEL 3
                 
                 &mo CONFIG  &mo SYMB &trans  &mo MACRO  &mo NUM                         
             >;
@@ -136,6 +136,16 @@
                 &mo CONFIG  &mo SYMB &trans  &mo MACRO  &mo NUM                         
             >;
 
+        };
+
+        // Spare layers for ZMK Studio. Ignored by the normal firmware, available to edit
+        // in the Studio firmware (keyb-zmk-studio).
+        extra_layer_1 {
+            status = "reserved";
+        };
+
+        extra_layer_2 {
+            status = "reserved";
         };
     };
 };
