@@ -77,7 +77,7 @@ The `firmware.zip` artifact contains:
 - `keyb__zmk-zmk.uf2`: the normal firmware.
 - `settings_reset-keyb__zmk-zmk.uf2`: wipes all stored settings and BLE bonds.
 - `keyb-zmk-usb-logging.uf2`: the normal firmware plus logging over USB serial, for debugging.
-- `keyb-zmk-studio.uf2`: the normal firmware plus [ZMK Studio](https://zmk.dev/docs/features/studio), to edit the keymap live from <https://zmk.studio> over USB or BLE. Unlock it first with the `Studio unlock` key (CONFIG + Ctrl). Edits made in Studio are stored on the keyboard and are not reflected in `config/keyb.keymap` or the keymap drawing.
+- `keyb-zmk-studio.uf2`: the normal firmware plus [ZMK Studio](https://zmk.dev/docs/features/studio), to edit the keymap live from <https://zmk.studio> over USB or BLE. Unlock it first with the `Studio unlock` key (CONFIG + Esc). Edits made in Studio are stored on the keyboard and are not reflected in `config/keyb.keymap` or the keymap drawing.
 
 ### Flashing
 
