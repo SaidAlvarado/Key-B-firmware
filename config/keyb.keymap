@@ -16,6 +16,11 @@
 #define CONFIG    4
 #define MACRO     5
 
+// Release the sticky FLIP layer after 400 ms instead of the default 1000 ms
+&sl {
+    release-after-ms = <400>;
+};
+
 / {
 
     macros {
@@ -129,7 +134,7 @@
 
         macro_layer {
             bindings = <
-                &none    &email    &none     &none      &none    &none
+                &none    &email    &none     &none      &none    &kp F11
                 &none    &none     &none     &none      &none    &none 
                 &none    &none     &none     &none      &none    &none  
                 &none    &none     &none     &none      &none    &none
