@@ -33,6 +33,9 @@ CONFIG_ZMK_BLE=y
 # Try to fix connection issues with android and linux
 CONFIG_ZMK_BLE_EXPERIMENTAL_CONN=y
 
+# Enable mouse support
+CONFIG_ZMK_POINTING=y
+
 #allow for longer macros
 # CONFIG_ZMK_BEHAVIORS_QUEUE_SIZE=512
 
