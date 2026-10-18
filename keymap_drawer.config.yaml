@@ -1,0 +1,11 @@
+# keymap-drawer settings, used by .github/workflows/draw.yml
+# See https://github.com/caksoylar/keymap-drawer/blob/main/CONFIGURATION.md
+draw_config:
+  # Draw the layers in a grid with 2 columns instead of a single column
+  n_columns: 2
+parse_config:
+  # Legends for the custom behaviors defined in config/keyb.keymap
+  raw_binding_map:
+    "&alt_der": { t: Alt, h: "×2 AltGr" }
+    "&shft_CP": { t: Shift, h: "×2 Caps" }
+    "&email": { t: Email, h: "×1/×2/×3" }

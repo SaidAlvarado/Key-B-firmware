@@ -18,4 +18,11 @@
 #
 ---
 include:
-  - board: keyb
+  - board: keyb//zmk
+  # Flash this first to wipe stored BLE bonds/settings, then flash the normal firmware.
+  - board: keyb//zmk
+    shield: settings_reset
+  # Debug build: logs over USB serial (e.g. `tio /dev/ttyACM0`).
+  - board: keyb//zmk
+    snippet: zmk-usb-logging
+    artifact-name: keyb-zmk-usb-logging

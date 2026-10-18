@@ -3,11 +3,14 @@ manifest:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
     # Additional modules containing boards/shields/custom code can be listed here as well
-    # See https://docs.zephyrproject.org/3.2.0/develop/west/manifest.html#projects
+    # See https://docs.zephyrproject.org/4.1.0/develop/west/manifest.html#projects
   projects:
     - name: zmk
       remote: zmkfirmware
-      revision: main
+      # Pinned to a ZMK `main` commit (2026-10-09, Zephyr 4.1). There is no tagged release
+      # with Zephyr 4.1 yet; switch to `v0.4` once it is released.
+      # See https://zmk.dev/blog/2025/06/20/pinned-zmk
+      revision: 4dd95d7840eb3d5a3f59bb29fbf1ab054715ef85
       import: app/west.yml
   self:
     path: config

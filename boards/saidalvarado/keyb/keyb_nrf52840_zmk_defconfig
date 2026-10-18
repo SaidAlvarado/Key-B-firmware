@@ -1,11 +1,10 @@
 # SPDX-License-Identifier: MIT
 
-CONFIG_SOC_SERIES_NRF52X=y
-CONFIG_SOC_NRF52840_QIAA=y
-CONFIG_BOARD_KEYB=y
-
 # Enable MPU
 CONFIG_ARM_MPU=y
+
+# Use pinctrl
+CONFIG_PINCTRL=y
 
 # enable GPIO
 CONFIG_GPIO=y
@@ -20,7 +19,13 @@ CONFIG_FLASH=y
 CONFIG_FLASH_PAGE_LAYOUT=y
 CONFIG_FLASH_MAP=y
 CONFIG_CLOCK_CONTROL_NRF=y
-CONFIG_CLOCK_CONTROL_NRF_K32SRC_RC=y
+
+# The PCB has a 32.768 kHz crystal (Y1, ECS-.327-9-34B, +-20 ppm), so use it as the
+# low-frequency clock source instead of the internal RC oscillator. The BLE link layer
+# times its connection events off this clock, and the RC oscillator (+-500 ppm, drifting
+# with temperature) makes the radio miss connection events, which shows up as dropouts.
+CONFIG_CLOCK_CONTROL_NRF_K32SRC_XTAL=y
+CONFIG_CLOCK_CONTROL_NRF_K32SRC_20PPM=y
 
 CONFIG_ZMK_USB=y
 CONFIG_ZMK_BLE=y
@@ -31,19 +36,10 @@ CONFIG_ZMK_BLE_EXPERIMENTAL_CONN=y
 #allow for longer macros
 # CONFIG_ZMK_BEHAVIORS_QUEUE_SIZE=512
 
-# CONFIG_LOG=y
-# CONFIG_ZMK_USB_LOGGING=y
-# CONFIG_USB_CDC_ACM_RINGBUF_SIZE=32768
-# CONFIG_LOG_BUFFER_SIZE=32768
+# For USB logging, build with the `zmk-usb-logging` snippet instead of the flags below
+# (see build.yaml).
 # CONFIG_ZMK_LOG_LEVEL_DBG=y
-# CONFIG_GPIO_LOG_LEVEL_DBG=y
 # CONFIG_BT_LOG_LEVEL_DBG=y
-# CONFIG_SENSOR_LOG_LEVEL_DBG=y
-# CONFIG_LOG_PROCESS_THREAD_STARTUP_DELAY_MS=4000
 
 # CONFIG_ZMK_HID_CONSUMER_REPORT_USAGES_BASIC=y
 # CONFIG_HEAP_MEM_POOL_SIZE=32768
-
-
-CONFIG_USB_NRFX=y
-CONFIG_USB_DEVICE_STACK=y

@@ -1,0 +1,50 @@
+/*
+ * Physical layout of the Key-B keyboard, used by ZMK Studio and keymap-drawer.
+ *
+ * Key positions come from the switch footprints in left-hand-keyboard/pcb/keyboard.kicad_pcb,
+ * in units of 1/100 key, with 1 key = 18 mm horizontally and 17 mm vertically (choc spacing).
+ * Keys are listed in the same order as the kscan input-gpios in keyb_nrf52840_zmk.dts.
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <physical_layouts.dtsi>
+
+/ {
+    keyb_layout: keyb_layout {
+        compatible = "zmk,physical-layout";
+        display-name = "Key-B";
+
+        keys  //                     w   h    x    y     rot    rx    ry
+            = <&key_physical_attrs 100 100    0   94       0     0     0>  //  S1 P1.09
+            , <&key_physical_attrs 100 100  100   94       0     0     0>  //  S5 P0.25
+            , <&key_physical_attrs 100 100  200   24       0     0     0>  //  S9 P0.29
+            , <&key_physical_attrs 100 100  300    0       0     0     0>  // S13 P1.13
+            , <&key_physical_attrs 100 100  400   29       0     0     0>  // S17 P1.12
+            , <&key_physical_attrs 100 100  500   47       0     0     0>  // S21 P0.23
+            , <&key_physical_attrs 100 100    0  194       0     0     0>  //  S2 P0.21
+            , <&key_physical_attrs 100 100  100  194       0     0     0>  //  S6 P0.24
+            , <&key_physical_attrs 100 100  200  124       0     0     0>  // S10 P0.04
+            , <&key_physical_attrs 100 100  300  100       0     0     0>  // S14 P1.14
+            , <&key_physical_attrs 100 100  400  129       0     0     0>  // S18 P0.05
+            , <&key_physical_attrs 100 100  500  147       0     0     0>  // S22 P1.15
+            , <&key_physical_attrs 100 100    0  294       0     0     0>  //  S3 P0.20
+            , <&key_physical_attrs 100 100  100  294       0     0     0>  //  S7 P0.28
+            , <&key_physical_attrs 100 100  200  224       0     0     0>  // S11 P1.02
+            , <&key_physical_attrs 100 100  300  200       0     0     0>  // S15 P1.01
+            , <&key_physical_attrs 100 100  400  229       0     0     0>  // S19 P1.10
+            , <&key_physical_attrs 100 100  500  247       0     0     0>  // S23 P0.07
+            , <&key_physical_attrs 100 100    0  394       0     0     0>  //  S4 P1.07
+            , <&key_physical_attrs 100 100  100  394       0     0     0>  //  S8 P1.11
+            , <&key_physical_attrs 100 100  200  324       0     0     0>  // S12 P0.08
+            , <&key_physical_attrs 100 100  300  300       0     0     0>  // S16 P1.03
+            , <&key_physical_attrs 100 100  400  329       0     0     0>  // S20 P1.05
+            , <&key_physical_attrs 100 100  500  347       0     0     0>  // S24 P1.06
+            , <&key_physical_attrs 100 100  361  459       0     0     0>  // S25 P1.04
+            , <&key_physical_attrs 100 100  461  459       0     0     0>  // S26 P1.08
+            , <&key_physical_attrs 100 100  561  459       0     0     0>  // S27 P0.26
+            , <&key_physical_attrs 100 100  611  359       0     0     0>  // S28 P0.27
+            , <&key_physical_attrs 100 100  661  459       0     0     0>  // S29 P0.03
+            ;
+    };
+};

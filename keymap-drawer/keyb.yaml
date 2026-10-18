@@ -1,0 +1,182 @@
+layout: {zmk_keyboard: keyb}
+layers:
+  default:
+  - ESC
+  - SPACE
+  - BSPC
+  - ''
+  - LEFT WIN
+  - '!'
+  - {t: Alt, h: ×2 AltGr}
+  - Q
+  - W
+  - F
+  - P
+  - B
+  - {t: Shift, h: ×2 Caps}
+  - A
+  - R
+  - S
+  - T
+  - G
+  - LCTRL
+  - Z
+  - X
+  - C
+  - D
+  - V
+  - config
+  - symb
+  - {t: flip, h: sticky}
+  - macro
+  - num
+  flip:
+  - ESC
+  - TAB
+  - DEL
+  - ^
+  - '%'
+  - '?'
+  - {t: Alt, h: ×2 AltGr}
+  - '&'
+  - Y
+  - U
+  - L
+  - J
+  - {t: Shift, h: ×2 Caps}
+  - O
+  - I
+  - E
+  - N
+  - M
+  - LCTRL
+  - ','
+  - ':'
+  - '='
+  - H
+  - K
+  - config
+  - symb
+  - {type: held}
+  - macro
+  - num
+  num:
+  - ''
+  - ENTER
+  - +
+  - '`'
+  - '>'
+  - '*'
+  - {t: Alt, h: ×2 AltGr}
+  - )
+  - '7'
+  - '8'
+  - '9'
+  - ']'
+  - {t: Shift, h: ×2 Caps}
+  - '0'
+  - '4'
+  - '5'
+  - '6'
+  - .
+  - LCTRL
+  - F12
+  - '1'
+  - '2'
+  - '3'
+  - '}'
+  - config
+  - symb
+  - {t: ▽, type: trans}
+  - macro
+  - {t: num, type: held}
+  symb:
+  - '~'
+  - $
+  - '@'
+  - ''
+  - <
+  - '#'
+  - {t: Alt, h: ×2 AltGr}
+  - (
+  - _
+  - UP
+  - /
+  - '['
+  - {t: Shift, h: ×2 Caps}
+  - \
+  - LEFT
+  - DOWN
+  - RIGHT
+  - '"'
+  - LCTRL
+  - '|'
+  - ;
+  - '-'
+  - ''''
+  - '{'
+  - config
+  - {t: symb, type: held}
+  - {t: ▽, type: trans}
+  - macro
+  - num
+  config:
+  - ''
+  - ''
+  - BT CLR
+  - ''
+  - {t: BT DISC, h: '0'}
+  - {t: BT, h: '0'}
+  - ''
+  - ''
+  - ''
+  - ''
+  - {t: BT DISC, h: '1'}
+  - {t: BT, h: '1'}
+  - ''
+  - ''
+  - ''
+  - ''
+  - {t: BT DISC, h: '2'}
+  - {t: BT, h: '2'}
+  - ''
+  - ''
+  - ''
+  - {t: BT, h: '4'}
+  - {t: BT DISC, h: '3'}
+  - {t: BT, h: '3'}
+  - {t: config, type: held}
+  - symb
+  - {t: ▽, type: trans}
+  - macro
+  - num
+  macro:
+  - ''
+  - {t: Email, h: ×1/×2/×3}
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - config
+  - symb
+  - {t: ▽, type: trans}
+  - {t: macro, type: held}
+  - num

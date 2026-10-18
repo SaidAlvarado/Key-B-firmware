@@ -1,5 +1,5 @@
 file_format: "1"
-id: keyb
+id: keyb//zmk
 name: keyb
 type: board
 arch: arm

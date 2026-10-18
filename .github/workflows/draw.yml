@@ -1,0 +1,25 @@
+# Redraws keymap-drawer/keyb.svg whenever the keymap or the physical layout changes,
+# and commits the result back to the branch.
+name: Draw keymap
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "config/*.keymap"
+      - "boards/*/*/*-layout.dtsi"
+      - "keymap_drawer.config.yaml"
+      - ".github/workflows/draw.yml"
+
+jobs:
+  draw:
+    uses: caksoylar/keymap-drawer/.github/workflows/draw-zmk.yml@v0.23.0
+    permissions:
+      contents: write # allow workflow to commit to the repo
+    with:
+      install_version: "0.23.0"
+      keymap_patterns: "config/*.keymap"
+      config_path: "keymap_drawer.config.yaml"
+      output_folder: "keymap-drawer"
+      # Physical layout is found automatically at boards/saidalvarado/keyb/keyb-layout.dtsi
+      fail_on_error: true

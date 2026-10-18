@@ -1,0 +1,7 @@
+board:
+  name: keyb
+  vendor: saidalvarado
+  socs:
+    - name: nrf52840
+      variants:
+        - name: zmk
