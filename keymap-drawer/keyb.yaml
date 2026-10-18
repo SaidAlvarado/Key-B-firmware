@@ -121,29 +121,29 @@ layers:
   - macro
   - num
   config:
-  - ''
+  - {t: Studio, h: unlock}
   - ''
   - BT CLR
   - ''
-  - {t: BT DISC, h: '0'}
+  - ''
   - {t: BT, h: '0'}
+  - LALT
   - ''
   - ''
   - ''
   - ''
-  - {t: BT DISC, h: '1'}
   - {t: BT, h: '1'}
+  - LSHFT
   - ''
-  - ''
-  - ''
-  - ''
-  - {t: BT DISC, h: '2'}
+  - '&mkp LCLK'
+  - '&mkp MCLK'
+  - '&mkp RCLK'
   - {t: BT, h: '2'}
-  - {t: Studio, h: unlock}
+  - LCTRL
+  - ''
   - ''
   - ''
   - {t: BT, h: '4'}
-  - {t: BT DISC, h: '3'}
   - {t: BT, h: '3'}
   - {t: config, type: held}
   - symb
